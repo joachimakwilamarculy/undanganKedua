@@ -1,0 +1,1075 @@
+/* --- RESET & RESPONSIVE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Kunci Layar Utama */
+body.no-scroll {
+  overflow: hidden;
+  height: 100dvh;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fdf6ff;
+  text-align: center;
+}
+
+.guest-box p {
+    color: #fdf6ff;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  position: relative;
+  height: 100dvh;
+  width: 100%;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("asset/Beranda.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Dekorasi Pojok - Ikut Tergulung */
+.decor-hero {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.atas-kiri {
+  top: -25px;
+  left: -80px;
+  width: 30%;
+  position: absolute;
+  animation: munculDariKiri 1.8s ease-out forwards;
+}
+
+.atas-kanan {
+  top: -50px;
+  right: -150px;
+  width: 50%;
+  animation: riseDownAndStay 1.8s ease-out forwards;
+  position: absolute;
+}
+
+.bawah-kiri {
+  bottom: -10px;
+  left: -100px;
+  width: 50%;
+  animation: riseUpAndStay 1.8s ease-out forwards;
+  position: absolute;
+}
+
+.Angsa {
+  bottom: -5px;
+  right: 100px;
+  width: 25%;
+  position:absolute;
+  animation: mengapungPelan 3s linear 2s infinite;
+}
+
+.bungaprofile {
+  bottom: -200px;
+  right: 50px;
+  width: 80%;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bank {
+  width: 70%;
+}
+
+.bank2 {
+  width: 65%;
+  margin-top: -13px;
+}
+
+/* Konten Nama & Jarak */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  z-index: 5;
+  width: 100%;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* ========================================= */
+/* === ANIMASI TERBIT HALAMAN COVER ======== */
+/* ========================================= */
+
+/* Pengaturan dasar elemen sebelum animasi dimulai */
+.animasi-terbit {
+    opacity: 0; /* Awalnya tidak terlihat (transparan) */
+    transform: translateY(40px); /* Awalnya posisinya turun 40px ke bawah */
+    
+    /* Panggil keyframes 'terbitKeAtas' selama 1 detik */
+    /* 'forwards' berarti setelah selesai, dia menetap di posisi akhir */
+    animation: terbitKeAtas 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Jalan cerita animasinya (dari bawah naik ke posisi asli) */
+@keyframes terbitKeAtas {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1; /* Terlihat penuh */
+        transform: translateY(0); /* Kembali ke posisi aslinya */
+    }
+}
+
+/* --- MENGATUR URUTAN MUNCUL (DELAY) --- */
+/* Semakin besar delay-nya, semakin lama dia menunggu gilirannya */
+.delay-1 { animation-delay: 0.2s; } /* Muncul pertama */
+.delay-2 { animation-delay: 0.6s; } /* Muncul kedua */
+.delay-3 { animation-delay: 1.0s; } /* Muncul ketiga */
+.delay-4 { animation-delay: 1.4s; } /* Kotak tamu muncul paling akhir */
+
+.main-title {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.3rem, 10vw, 4.5rem);
+  color: #bf89c7;
+  white-space: nowrap; /* Nama jadi satu baris */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.subtitle {
+  color: white;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.date {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* --- NAVIGASI MELAYANG (KANAN ATAS) --- */
+/* ========================================================== */
+/* === GAYA NAVIGASI MENGAMBANG POJOK KANAN ATAS (LEBIH KECIL) === */
+/* ========================================================== */
+
+#floating-nav {
+    position: fixed; 
+    top: 20px;       
+    right: 15px;     
+    display: flex;   
+    flex-direction: column; 
+    gap: 8px;        
+    z-index: 9999;   
+}
+
+/* Mobile: nav horizontal di atas */
+@media screen and (max-width: 768px) {
+    #floating-nav {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: rgba(94, 53, 177, 0.95);
+        padding: 10px 5px;
+        border-radius: 0;
+        gap: 4px;
+        backdrop-filter: blur(6px);
+    }
+
+    .nav-button {
+        font-size: 0.65rem;
+        padding: 6px 8px;
+        min-width: unset;
+        flex: 1;
+        border-radius: 8px;
+    }
+
+    .nav-button:hover {
+        transform: none;
+    }
+}
+
+/* GAYA TOMBOL INDIVIDUAL (UKURAN DIPERKECIL) */
+.nav-button {
+    background-color: #7e57c2; /* Mengikuti warna ungu kalem seperti di gambar Anda */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.75rem;        /* Ukuran huruf dikecilkan (sekitar 12px) */
+    font-weight: 500;
+    padding: 6px 16px;         /* Ruang di dalam tombol diperkecil */
+    border-radius: 15px;       /* Sudut tidak terlalu bulat (menyesuaikan gambar) */
+    text-align: center;
+    min-width: 80px;           /* Lebar minimal agar semua tombol seragam ukurannya */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15); /* Bayangan dibuat lebih halus */
+    transition: all 0.3s ease; 
+}
+
+/* Efek saat tombol disentuh */
+.nav-button:hover {
+    background-color: #5e35b1; /* Ungu sedikit lebih gelap saat disentuh */
+    transform: translateX(-3px); /* Tombol sedikit bergeser ke kiri saat disentuh (efek interaktif) */
+}
+
+/* --- LOGIKA TAMPILAN --- */
+.hidden {
+  display: none !important;
+}
+
+/* --- HALAMAN ISI --- */
+.full-page {
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .full-page {
+    padding: 60px 15px 100px; /* bottom padding untuk nav mobile */
+  }
+}
+
+#profile {
+  background-color: #fdfcf0;
+}
+
+#info {
+  background-color: #e0d1ed;
+}
+
+.mempelai-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 5;
+  gap: 50px;
+  width: 100%;
+}
+
+.mempelai {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Susun elemen ke bawah */
+    align-items: center; /* Posisikan semua di tengah horizontal */
+    text-align: center;
+}
+
+.photo-frame {
+    width: 150px; /* Sesuaikan ukuran frame bulat */
+    height: 150px;
+    border-radius: 50%; /* Membuat frame menjadi bulat sempurna */
+    border: 5px solid #e1bee7; /* Memberi bingkai warna ungu muda */
+    overflow: hidden; /* Sembunyikan bagian foto yang keluar dari bulatan */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Efek bayangan halus */
+    margin-bottom: 20px; /* Jarak aman ke nama mempelai di bawahnya */
+    background-color: #f3e5f5; /* Warna latar belakang jika foto gagal dimuat */
+}
+
+.pengantin {
+  font-family: "Great Vibes", cursive;
+  font-size: 200%;
+}
+
+/* ========================================= */
+/* === GAYA PETA LOKASI ACARA ============== */
+/* ========================================= */
+.event-container {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin: 40px auto;
+    max-width: 500px;
+    text-align: center;
+    border-top: 5px solid #9c27b0; /* Warna garis atas ungu */
+}
+
+/* Membungkus peta agar ujungnya melengkung rapi */
+.map-wrapper {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden; /* Mengunci peta agar tidak keluar garis lengkung */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border: 2px solid #e1bee7;
+}
+
+/* Memastikan peta menyesuaikan layar HP */
+.map-wrapper iframe {
+    width: 100% !important; 
+    height: 250px; 
+    display: block;
+}
+
+/* Tombol Buka Maps */
+.btn-buka-maps {
+    display: inline-block;
+    background-color: #9c27b0;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    width: 80%; /* Tombol agak lebar */
+}
+
+.btn-buka-maps:hover {
+    background-color: #7b1fa2;
+}
+
+/* Pengaturan awal kartu sebelum muncul */
+.scroll-animasi {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Kondisi saat kartu muncul di layar */
+.scroll-animasi.muncul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Jeda agar kartu kedua muncul sedikit lebih lambat */
+.delay-1 {
+    transition-delay: 0.3s;
+}
+
+/* ========================================= */
+/* === ANIMASI TERBIT SAAT DI-SCROLL ======= */
+/* ========================================= */
+
+.scroll-animasi {
+    opacity: 0;
+    transform: translateY(50px); /* Posisi awal turun 50px */
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Efek mulus */
+}
+
+/* Class ini akan disuntikkan oleh JavaScript saat elemen terlihat di layar */
+.scroll-animasi.muncul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pengaturan Delay (Gunakan transition-delay, BUKAN animation-delay) */
+.scroll-animasi.delay-1 { transition-delay: 0.2s; }
+.scroll-animasi.delay-2 { transition-delay: 0.4s; }
+.scroll-animasi.delay-3 { transition-delay: 0.6s; }
+.scroll-animasi.delay-4 { transition-delay: 0.8s; }
+
+.ig-link {
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+}
+
+.btn-ig {
+    padding: 8px 15px;
+    background: #e1bee7; /* Warna ungu muda lembut */
+    color: #be22e6;
+    border: 1px solid #9c27b0;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-ig:hover {
+    background: #9c27b0;
+    color: white;
+    transform: translateY(-2px); /* Efek melompat sedikit saat disentuh */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column; /* Menyusun elemen ke bawah (Ikon dulu, lalu teks) */
+  align-items: center;    /* Posisikan di tengah secara horizontal */
+  margin-bottom: 20px;    /* Jarak antar kelompok (jarak tanggal ke jam) */
+  gap: 8px;               /* Jarak antara gambar ikon dengan teks di bawahnya */
+  z-index: 10;
+}
+
+.ikon{
+  width: 15%;           /* Sesuaikan ukuran ikon (jangan terlalu besar) */
+  bottom: 70px;
+  height: auto;
+  display: block !important;
+}
+
+.detail p {
+  margin: 0;             /* Menghapus margin bawaan p agar jaraknya pas */
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.kalimat {
+  max-width: 600px;
+  line-height: 1.8;
+  padding: 0 10px;
+}
+
+.card,
+.bank-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 20px;
+  border-top: 5px solid #9c27b0;
+}
+
+.salin {
+    background: #f3e5f5; /* Warna dasar ungu sangat muda */
+    color: #6a1b9a;      /* Teks ungu tua */
+    border: 1px solid #6a1b9a;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;         /* Tombol memanjang penuh */
+    transition: all 0.3s ease; /* Animasi halus saat disentuh */
+}
+
+.salin:hover {
+    background: #6a1b9a;
+    color: #ffffff;
+}
+
+.salin.sukses-salin {
+    background: #4CAF50 !important; /* Warna hijau sukses */
+    color: white !important;
+    border-color: #4CAF50 !important;
+    transform: scale(0.95); /* Efek tombol sedikit mengecil seperti ditekan */
+}
+
+.btn-open {
+  padding: 12px 35px;
+  background: #5e35b1;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* --- DESAIN KARTU SATUAN --- */
+.bank-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Bayangan halus */
+    border-top: 5px solid #9c27b0; /* Garis ungu di atas */
+    
+    /* PENGATURAN LEBAR AGAR BISA BERSAMPINGAN */
+    flex: 1;                 /* Biarkan kartu membesar/mengecil mengikuti ruang */
+    min-width: 280px;        /* Lebar minimal agar isi tidak tergencet di HP */
+    max-width: 350px;        /* Lebar maksimal agar tidak terlalu melar di Laptop */
+    
+    text-align: center;
+}
+
+/* ========================================= */
+/* === GAYA KOTAK UCAPAN & DOA ============= */
+/* ========================================= */
+
+.wishes-container {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin: 40px auto;
+    max-width: 500px; /* Lebar maksimal agar tidak terlalu melar */
+    border-top: 5px solid #9c27b0;
+    text-align: left;
+}
+
+.wishes-title {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.wishes-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+/* Desain Input Form */
+.wishes-form input, 
+.wishes-form select, 
+.wishes-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    box-sizing: border-box; /* Agar padding tidak melebihi kotak */
+}
+
+.wishes-form input:focus, 
+.wishes-form select:focus, 
+.wishes-form textarea:focus {
+    outline: none;
+    border-color: #9c27b0;
+    box-shadow: 0 0 5px rgba(156, 39, 176, 0.3);
+}
+
+.btn-kirim-ucapan {
+    width: 100%;
+    background-color: #9c27b0;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-kirim-ucapan:hover {
+    background-color: #7b1fa2;
+}
+
+/* Area Daftar Komentar / Ucapan */
+.messages-list {
+    margin-top: 30px;
+    max-height: 300px; /* Batasi tinggi kotak komentar */
+    overflow-y: auto;  /* Tambahkan scroll di dalam kotak jika komentar banyak */
+    padding-right: 10px;
+}
+
+.message-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #9c27b0;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.badge-hadir {
+    background-color: #e1bee7;
+    color: #6a1b9a;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.message-body {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* --- ANIMASI --- */
+@keyframes riseUpAndStay {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes riseDownAndStay {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Media Query Mobile */
+@media (max-width: 600px) {
+  .atas-kiri,
+  .atas-kanan {
+    width: 40%;
+  }
+  .Angsa {
+    width: 100px;
+  }
+}
+
+@keyframes munculDariKiri {
+    0% {
+        /* POSISI AWAL (START) */
+        opacity: 0;             /* Sepenuhnya transparan (hilang) */
+        
+        /* Geser kotak bunga 100% ke kiri (keluar dari layar) */
+        transform: translateX(-100%); 
+    }
+    
+    100% {
+        /* POSISI AKHIR (FINISH) */
+        opacity: 1;             /* Sepenuhnya terlihat tajam */
+        
+        /* Kembali ke posisi aslinya (top:0, left:0) */
+        transform: translateX(0); 
+    }
+  }
+
+  @keyframes mengapungPelan {
+    0%, 100% {
+        /* Posisi diam di air */
+        transform: translateY(0);
+    }
+    50% {
+        /* Terangkat ombak pelan (naik 5px) */
+        transform: translateY(-5px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .card-number { font-size: 1.2rem; }
+    .bank-card { padding: 20px; }
+}
+
+
+/* ========================================= */
+/* === GAYA HALAMAN LOVE STORY (TIMELINE) === */
+/* ========================================= */
+
+/* Container Utama Love Story */
+.love-story-section {
+    padding: 60px 20px;
+    background-color: #fdfcff;
+    text-align: center;
+}
+
+.story-title {
+    color: #4a148c;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.story-subtitle {
+    color: #7b1fa2;
+    margin-bottom: 50px;
+}
+
+/* Garis Timeline */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #e1bee7;
+    transform: translateX(-50%);
+}
+
+/* Item Timeline */
+.timeline-item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: flex-end; /* Default kanan */
+}
+
+.timeline-item:nth-child(odd) {
+    justify-content: flex-start; /* Ganjil kiri */
+}
+
+/* Titik Ungu di Tengah */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    width: 16px;
+    height: 16px;
+    background-color: #9c27b0;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border: 3px solid #fdfcff;
+}
+
+/* Kotak Konten (Card) */
+.timeline-content {
+    width: 45%;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border-left: 5px solid #9c27b0; /* Aksen Ungu */
+}
+
+/* Grid Foto & Teks */
+.story-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.story-img {
+    flex: 1;
+    min-width: 130px;
+    height: 160px;
+}
+
+.story-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-text {
+    flex: 1.5;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Zig-Zag: Baris Genap Foto Pindah ke Kanan */
+.timeline-item:nth-child(even) .story-grid {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    border-left: none;
+    border-right: 5px solid #9c27b0;
+}
+
+.timeline-date {
+    color: #9c27b0;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+/* Responsif Mobile */
+@media screen and (max-width: 768px) {
+    .timeline-line { left: 20px; transform: none; }
+    .timeline-dot { left: 20px; transform: none; }
+    .timeline-item { justify-content: flex-end !important; padding-left: 40px; }
+    .timeline-content { width: 100%; }
+    .story-grid { flex-direction: column !important; }
+    .story-img { width: 100%; height: 200px; }
+}
+
+/* ========================================= */
+/* === GAYA HALAMAN PREWEDDING (GALERI) === */
+/* ========================================= */
+
+.prewedding-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.gallery-title {
+    color: #4a148c;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.gallery-subtitle {
+    color: #7b1fa2;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+/* Desain Grid Masonry untuk Foto */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsif */
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden; /* Mengunci foto saat diperbesar (hover) */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 1 / 1; /* Foto jadi kotak sempurna, bisa dihapus jika ingin masonry */
+}
+
+/* Membuat foto masonry (Pinterest) jika aspect-ratio dihapus */
+/* .gallery-item img {
+    height: 100%;
+} */
+
+.gallery-item:hover {
+    transform: scale(1.03); /* Sedikit membesar saat hover */
+    box-shadow: 0 8px 25px rgba(156, 39, 176, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Foto menyesuaikan kotak tanpa peyang */
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Efek zoom di dalam kotak */
+}
+
+/* Overlay Ungu Tipis saat Hover */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(156, 39, 176, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* ========================================= */
+/* === GAYA LIGHTBOX (ZOOM FOTO) === */
+/* ========================================= */
+
+.lightbox {
+    display: none; /* Awalnya disembunyikan */
+    position: fixed;
+    z-index: 1000; /* Paling atas */
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9); /* Latar belakang hitam pekat */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    transform: scale(0.7); /* Awalnya kecil untuk animasi */
+    transition: transform 0.3s ease;
+}
+
+.lightbox.open {
+    display: flex; /* Munculkan */
+}
+
+.lightbox.open .lightbox-img {
+    transform: scale(1); /* Membesar saat muncul */
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    left: 40px; /* Diubah dari 'right' menjadi 'left' agar pindah ke kiri */
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001; /* Memastikan tombol berada di atas elemen lain */
+    text-shadow: 0 0 10px rgba(0,0,0,0.5); /* Agar tetap terlihat jelas di foto terang */
+}
+
+@media screen and (max-width: 600px) {
+    .lightbox-close {
+        top: 20px;
+        left: 20px; /* Jarak lebih kecil untuk layar HP */
+        font-size: 35px;
+    }
+}
+
+/* ========================================= */
+/* === GAYA PENUTUP (WARNA DASAR TERANG) === */
+/* ========================================= */
+
+.wedding-footer {
+    background-color: #fdf6ff;
+    color: #333333;
+    padding: 80px 20px 40px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .wedding-footer {
+        padding-bottom: 100px; /* ruang untuk nav mobile */
+    }
+}
+
+.footer-profile {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    border: 4px solid #9c27b0; /* Lingkaran ungu sesuai tema */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.footer-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-thanks p {
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-style: italic;
+    color: #555555;
+}
+
+.footer-names {
+    /* Gunakan font estetik Anda di sini */
+    font-family: 'Great Vibes', cursive; 
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #4a148c; /* Warna ungu tua untuk nama */
+}
+
+/* ========================================= */
+/* === KODE DIPERBARUI UNTUK HP (RESPONSIF) === */
+/* ========================================= */
+
+@media screen and (max-width: 768px) {
+    /* 1. Dekorasi Bunga & Angsa - Penyesuaian Ukuran & Posisi agar Terlihat Jelas & Konsisten */
+    
+    /* Semua ornamen bunga dibuat sama besar (Misalnya: 80%) agar konsisten */
+    .atas-kiri { 
+        width: 80%; /* Diperbesar untuk konsistensi */
+        left: -30px; 
+        top: -10px; 
+    }
+    .atas-kanan { 
+        width: 80%; /* Diperbesar untuk konsistensi */
+        right: -50px; 
+        top: -20px; 
+    }
+    
+    /* Bunga Bawah Kiri - Masalah Utama: Bawa Kembali ke Layar & Perbesar */
+    .bawah-kiri { 
+        width: 80%; /* Disamakan ukurannya dengan bunga lain */
+        left: -80px; /* Pertahankan posisi kiri */
+        /* Ubah dari -100px ke nilai positif (misalnya 20px) agar naik ke dalam layar */
+        bottom: 20px; 
+        position: absolute;
+    }
+    
+    /* Angsa diperbesar sedikit (dari 45% ke 55%) */
+    .Angsa { 
+        width: 55%; /* Diperbesar sedikit */
+        right: 10px; 
+        bottom: 10px; 
+    }
+
+    /* --- Sisa kode media query (TIDAK BERUBAH) --- */
+    .bungaprofile { width: 100%; right: 0; opacity: 0.15; } /* Agak transparan di HP */
+
+    /* Menyesuaikan ukuran teks judul utama */
+    .main-title { font-size: 2.5rem; }
+
+    .hero-content { gap: 20px; }
+    
+    /* Layout Mempelai menjadi atas-bawah (Vertikal) */
+    .mempelai-container {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    /* Memastikan semua kartu (Acara, Bank, Form) pas di tengah layar HP */
+    .card-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .card, .bank-card, .event-container, .wishes-container {
+        width: 90%;
+        max-width: none;
+        padding: 20px 15px;
+        box-sizing: border-box;
+    }
+
+    /* Peta Google Maps lebih proporsional di layar kecil */
+    .map-wrapper iframe { height: 200px; }
+
+    /* Layout Love Story menjadi atas-bawah */
+    .story-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .story-img img {
+        width: 100%; 
+        max-width: 250px; /* Batas maksimal besarnya foto timeline */
+    }
+
+    /* Gallery Prewedding berubah menjadi 2 kolom rapi di HP */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0 10px;
+    }
+}
