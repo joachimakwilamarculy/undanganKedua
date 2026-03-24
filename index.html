@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jubandy & Yemima Wedding</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="no-scroll" id="body">
+
+    <nav id="floating-nav" class="nav-floating hidden">
+        <button class="nav-button" onclick="goToPage('profile')">Profile</button>
+        <button class="nav-button" onclick="goToPage('info')">Acara</button>
+        <button class="nav-button" onclick="goToPage('gifts')">Gifts</button>
+        <button class="nav-button" onclick="goToPage('lovestory')">Love Story</button>
+        <button class="nav-button" onclick="goToPage('albumprewed')">Prewed</button>
+    </nav>
+
+    <section id="home" class="hero">
+        <img src="asset/bunga.png" class="atas-kiri">
+        <img src="asset/bunga2.png" class="atas-kanan">
+        <img src="asset/bungaBawah.png" class="bawah-kiri">
+
+        <div class="hero-content">
+            <p class="subtitle animasi-terbit delay-1">The Wedding of</p>
+            
+            <h1 class="main-title animasi-terbit delay-2">Jubandy & Yemima</h1>
+            
+            <p class="date animasi-terbit delay-3">09 . 04 . 2026</p>
+
+            <div class="guest-box animasi-terbit delay-4">
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i<br><br></p>
+                <button class="btn-open" onclick="bukaUndangan()">Buka Undangan</button>
+            </div>
+        </div>
+
+        <img src="asset/Angsa1.png" class="Angsa">
+    </section>
+
+    <main id="main-content" class="hidden">
+        
+        <section id="profile" class="full-page">
+            <div class="verse">
+                <p>"Dan di atas semuanya itu: kenakanlah kasih, sebagai pengikat yang mempersatukan dan menyempurnakan."</p>
+                <span>(Kolose 3:14)<br><br></span>
+            </div>
+            
+            <h2>Salam Damai Sejahtera<br><br></h2>
+            <p class="kalimat">Tuhan membuat segala sesuatu indah pada waktunya, indah saat dia mempertemukan kami, Indah saat Menumbuhkan kasih diantara kami, dan indah saat Ia mempersatukan kami dalam satu ikatan pernikahan Kudus<br><br></p>
+            
+            <div class="mempelai-container">
+                <div class="mempelai">
+                    <div class="photo-frame scroll-animasi">
+                        <img src="asset/pria.jpg">
+                    </div>
+                    <h3 class="pengantin scroll-animasi delay-1">Jubandy, S.Th</h3>
+                    <p class="scroll-animasi delay-2">Putra dari Bapak Libi & Ibu Jenak (✝)</p>
+                    <p class="scroll-animasi delay-3">Putra angkat dari Bapak Pdt. Hadiwiyoto Said, M.T (✝) <br>& Ibu Maria Yulaicha<br><br></p>
+                    <a href="https://www.instagram.com/jubandy_jho..." target="_blank" class="ig-link scroll-animasi delay-4">
+                        <button class="btn-ig">@jubandy_jho</button><br><br>
+                    </a>
+                </div>
+                
+                <div class="mempelai">
+                    <div class="photo-frame scroll-animasi">
+                        <img src="asset/wanita.jpg">
+                    </div>
+                    <h3 class="pengantin scroll-animasi delay-1">Yemima Eka Sintya, S.Th</h3>
+                    <p class="scroll-animasi delay-2">Putri dari bapak Slamet Riyadi(✝) & Ibu Widayati<br><br> </p>
+                    <a href="https://www.instagram.com/yemimaekasintya..." target="_blank" class="ig-link scroll-animasi delay-3">
+                        <button class="btn-ig">@yemimaekasyntia</button>
+                    </a>
+                </div>
+            </div>
+                <img src="asset/bungaprofile.png" class="bungaprofile">
+            </div>
+        </section>
+
+        <section id="info" class="full-page">
+            <h2>Informasi Acara<br><br></h2>
+            <p>Dengan segala kerendahan hati dan ucapan syukur atas karunia Tuhan,<br> Kami Mengundang Bapak/Ibu/Saudara/i untuk menghadiri Pernikahan kudus kami<br> yang akan di selenggarakan pada<br><br></p>
+            <div class="card-grid">
+            <div class="card scroll-animasi">
+                <h3>PEMBERKATAN<br><br></h3>
+                <div class="detail">
+                    <img src="asset/kalender.png" class="ikon">
+                    <p><strong>Kamis, 09 April 2026</strong></p>
+                </div>
+                <div class="detail">
+                    <img src="asset/jam.png" class="ikon">
+                    <p>Pukul: 08.00 WIB</p>
+                </div>
+                <p>Tempat: GKMI Agape, Ds. Sripendowo, <br>Gg. Patriot, RT.08/RW.01, <br>Kec. Ketapang Lampung Selatan</p>
+            </div>
+
+            <div class="card scroll-animasi delay-1">
+                <h3>RESEPSI NIKAH<br><br></h3>
+                <div class="detail">
+                    <img src="asset/kalender.png" class="ikon">
+                    <p><strong>Kamis, 09 April 2026</strong></p>
+                </div>
+                <div class="detail">
+                    <img src="asset/jam.png" class="ikon">
+                    <p>Pukul: 09.00 WIB s/d Selesai</p>
+                </div>
+                <p>Tempat: Kediaman Mempelai Wanita <br>Ds. Sripendowo, RT.004/RW.005 <br>Kec. Ketapang Lampung Selatan <br>(200m Dari Perempatan Sripendowo)</p>
+            </div>
+        </div>
+                <div class="event-container scroll-animasi delay-1">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1773947680804!6m8!1m7!1sq4EBFo_pxB7tBpeF8VapfQ!2m2!1d-5.731076848077394!2d105.7554440128212!3f261.14166!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>    
+
+                    <a href="https://maps.app.goo.gl/YNbz7cvjzdy3FWj5A" target="_blank" class="btn-buka-maps">
+                        📍 Buka di Google Maps
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="gifts" class="full-page">
+            <h2>Wedding Gifts<br><br></h2>
+            <p>Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Dan<br> jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi<br> kado secara cashless.<br><br></p>
+            <div class="bank-container">
+                <div class="bank-card">
+                    <img src="asset/bni.png" class="bank"><br><br>
+                    <p>BNI - 1179861163</p>
+                    <p>A.N JUBANDY<br><br></p>
+                    <button class="salin" data-nomer="1179861163" onclick="salinRekening(this)">Salin No. Rekening</button>
+                </div>
+                <div class="bank-card">
+                    <img src="asset/bri.png" class="bank2"><br><br>
+                    <p class="card-number">BRI - 584101024114534</p>
+                    <p>A.N YEMIMA EKA SINTYA<br><br></p>
+                    <button class="salin" data-nomer="584101024114534" onclick="salinRekening(this)">Salin No. Rekening</button>
+                </div>
+            </div>
+
+            <div class="wishes-container scroll-animasi delay-2">
+    <h2 class="wishes-title">RSVP, Ucapan & Doa</h2>
+    <p class="wishes-subtitle">Bantu kami mempersiapkan acara dengan mengonfirmasi kehadiran Anda. Pesan Anda akan tersimpan secara privat.</p>
+
+    <form id="wishesForm" class="wishes-form">
+        <input type="text" id="senderName" placeholder="Nama Anda" required>
+        
+        <select id="attendanceStatus">
+            <option value="Hadir">Akan Hadir</option>
+            <option value="Tidak Hadir">Maaf, Tidak Bisa Hadir</option>
+            <option value="Masih Ragu">Masih Ragu</option>
+        </select>
+        
+        <textarea id="wishMessage" rows="4" placeholder="Tulis pesan personal Anda untuk kami..." required></textarea>
+        
+        <button type="submit" id="btnSubmitUcapan" class="btn-kirim-ucapan">Kirim Pesan</button>
+    </form>
+
+    <div id="successMessage" style="display:none; text-align:center; color:#6a1b9a; margin-top:20px; font-weight:bold; background-color:#e1bee7; padding:10px; border-radius:8px;">
+        Terima kasih! Konfirmasi dan pesan manis Anda telah kami terima. ❤️
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // ⚠️ GANTI TEKS DI BAWAH INI DENGAN LINK WEB APP ANDA ⚠️
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyC8vAO5itZDLAB3Bd_3wXJl8l1BDnzmHaHHuU5z9sBBfx1svdNv24FM2zvJQfL1CB4zQ/exec';
+    
+    const form = document.getElementById('wishesForm');
+    const btnSubmit = document.getElementById('btnSubmitUcapan');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        // Ubah tampilan tombol jadi loading
+        btnSubmit.innerHTML = 'Mengirim...';
+        btnSubmit.disabled = true;
+
+        // Siapkan Data
+        const dataUrl = new URLSearchParams();
+        dataUrl.append('nama', document.getElementById('senderName').value);
+        dataUrl.append('kehadiran', document.getElementById('attendanceStatus').value);
+        dataUrl.append('ucapan', document.getElementById('wishMessage').value);
+
+        // Kirim ke Google Sheets
+        fetch(scriptURL, { 
+            method: 'POST', 
+            body: dataUrl,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        })
+        .then(response => {
+            // Bersihkan form
+            form.reset(); 
+            
+            // Kembalikan tombol seperti semula
+            btnSubmit.innerHTML = 'Kirim Pesan';
+            btnSubmit.disabled = false;
+            
+            // Munculkan kotak notifikasi sukses
+            successMessage.style.display = 'block';
+            
+            // Opsional: Hilangkan notifikasi sukses setelah 5 detik
+            setTimeout(function() {
+                successMessage.style.display = 'none';
+            }, 5000);
+        })
+        .catch(error => {
+            console.error('Gagal mengirim:', error.message);
+            btnSubmit.innerHTML = 'Gagal, Coba Lagi';
+            btnSubmit.disabled = false;
+        });
+    });
+
+});
+</script>
+
+        <section id="lovestory" class="full-page">
+           <div class="love-story-section">
+    <div class="container">
+        <h2 class="story-title animasi-terbit">Love Story</h2>
+        <p class="story-subtitle animasi-terbit delay-1">Perjalanan indah bagaimana Tuhan mempertemukan kami berdua.</p>
+
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item animasi-terbit delay-2">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="story-grid">
+                        <div class="story-img">
+                            <img src="asset/pertemuan.jpg" alt="Maret 2023">
+                        </div>
+                        <div class="story-text">
+                            <div class="timeline-date">Maret 2023</div>
+                            <h3>Pertama Bertemu</h3>
+                            <p>Di bawah tatapan takdir, kami dipertemukan pertama kali dalam sebuah acara. Sebuah senyuman awal yang menjadi benih perasaan yang tak terduga.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item animasi-terbit delay-3">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="story-grid">
+                        <div class="story-img">
+                            <img src="asset/teman.jpg" alt="Mei 2023">
+                        </div>
+                        <div class="story-text">
+                            <div class="timeline-date">Mei 2023</div>
+                            <h3>Memulai Pertemanan</h3>
+                            <p>Waktu berlalu, kami mulai sering mengobrol dan berbagi cerita. Menemukan banyak kecocokan dan tawa yang sama dalam setiap diskusi sederhana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item animasi-terbit delay-4">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="story-grid">
+                        <div class="story-img">
+                            <img src="asset/jadian.jpg" alt="Oktober 2023">
+                        </div>
+                        <div class="story-text">
+                            <div class="timeline-date">Oktober 2023</div>
+                            <h3>Menjalin Hubungan</h3>
+                            <p>Dengan restu Tuhan dan keyakinan di hati, kami memutuskan untuk mengikat janji suci dan memulai perjalanan bersama sebagai pasangan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item animasi-terbit delay-5">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="story-grid">
+                        <div class="story-img">
+                            <img src="asset/lamaran.jpg" alt="Februari 2025">
+                        </div>
+                        <div class="story-text">
+                            <div class="timeline-date">Februari 2025</div>
+                            <h3>Lamaran (Engagement)</h3>
+                            <p>Momen di mana kami berdua berjanji di hadapan keluarga untuk melangkah ke jenjang yang lebih serius, mempersiapkan masa depan bersama.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+        </section>
+        <section id="albumprewed" class="full-page">
+        <div class="prewedding-section">
+    <div class="container">
+        <h2 class="gallery-title animasi-terbit">Prewedding</h2>
+        <p class="gallery-subtitle animasi-terbit delay-1">Momen-momen indah yang kami abadikan dalam perjalanan menuju hari bahagia.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item animasi-terbit delay-2" onclick="openLightbox('asset/prewed1.jpg')">
+                <img src="asset/prewed1.jpg" alt="Prewedding 1">
+            </div>
+
+            <div class="gallery-item animasi-terbit delay-3" onclick="openLightbox('asset/prewed2.jpg')">
+                <img src="asset/prewed2.jpg" alt="Prewedding 2">
+            </div>
+
+            <div class="gallery-item animasi-terbit delay-4" onclick="openLightbox('asset/prewed3.jpg')">
+                <img src="asset/prewed3.jpg" alt="Prewedding 3">
+            </div>
+
+            <div class="gallery-item animasi-terbit delay-5" onclick="openLightbox('asset/prewed4.jpg')">
+                <img src="asset/prewed4.jpg" alt="Prewedding 4">
+            </div>
+
+            <div class="gallery-item animasi-terbit delay-6" onclick="openLightbox('asset/prewed5.jpg')">
+                <img src="asset/prewed5.jpg" alt="Prewedding 5">
+            </div>
+
+            <div class="gallery-item animasi-terbit delay-7" onclick="openLightbox('asset/prewed6.jpg')">
+                <img src="asset/prewed6.jpg" alt="Prewedding 6">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Zoom Foto">
+</div>
+        </section>
+
+        <footer class="wedding-footer scroll-animasi">
+            <div class="container">
+                
+                <div class="footer-profile">
+                    <img src="asset/foto-penutup.jpg" alt="Jubandy & Yemima">
+                </div>
+
+                <div class="footer-thanks">
+                    <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.</p>
+                </div>
+
+                <h2 class="footer-names">Jubandy <br>&<br> Yemima</h2>
+        </footer>
+    </main>
+
+    <script>
+        // FUNGSI UNTUK MEMBUKA LIGHTBOX (MEMPERBESAR FOTO)
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = imgSrc; // Ubah sumber gambar
+            lightbox.classList.add('open'); // Munculkan lightbox
+        }
+
+        // FUNGSI UNTUK MENUTUP LIGHTBOX
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('open'); // Sembunyikan lightbox
+        }
+    </script>
+
+    <script>
+        function bukaUndangan() {
+            document.getElementById('main-content').classList.remove('hidden');
+            document.getElementById('floating-nav').classList.remove('hidden');
+            document.body.classList.remove('no-scroll');
+            
+            // Scroll ke profile
+            document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function goToPage(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+    function salinRekening(button) {
+        // 1. Ambil angka murni dari atribut data-nomer pada tombol yang diklik
+        var noRekening = button.getAttribute('data-nomer');
+        
+        // 2. Perintah untuk menyalin teks ke clipboard HP/Laptop
+        navigator.clipboard.writeText(noRekening).then(function() {
+            
+            // 3. Efek visual: Ubah teks tombol sementara
+            var teksAsli = button.innerHTML; // Simpan teks "Salin Nomor Rekening"
+            button.innerHTML = "Berhasil Disalin! ✓"; // Ubah teks
+            button.classList.add('sukses-salin'); // Tambahkan warna hijau
+            
+            // 4. Kembalikan tombol ke keadaan semula setelah 2 detik (2000 milidetik)
+            setTimeout(function() {
+                button.innerHTML = teksAsli;
+                button.classList.remove('sukses-salin');
+            }, 2000);
+            
+        }).catch(function(err) {
+            // Jika browser tamu tidak mendukung fitur copy
+            alert('Gagal menyalin. Silakan salin manual.');
+        });
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Jika elemen masuk ke dalam layar
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('muncul');
+                    } 
+                    // JIKA ELEMEN KELUAR DARI LAYAR (Ini kuncinya!)
+                    else {
+                        // Hapus class 'muncul' agar elemen kembali sembunyi dan siap dianimasikan lagi
+                        entry.target.classList.remove('muncul');
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('.scroll-animasi');
+            elementsToAnimate.forEach(el => observer.observe(el));
+        });
+    </script>
+    
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('muncul');
+                }
+            });
+        });
+
+        // Menjalankan animasi untuk semua elemen dengan class scroll-animasi
+        document.querySelectorAll('.scroll-animasi').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
